@@ -1,3 +1,12 @@
-export default function Home() {
-	return <main>home page</main>;
-}
+import { Button } from "@/components/ui/button";
+import { FiDownload } from "react-icons/fi";
+
+const Home = () => {
+	return (
+		<section className="h-full">
+			<div className="container mx-auto">Home page</div>
+		</section>
+	);
+};
+
+export default Home;

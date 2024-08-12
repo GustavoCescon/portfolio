@@ -7,11 +7,11 @@ const stats = [
 		text: "Years of experience",
 	},
 	{
-		num: 26,
+		num: 10,
 		text: "Projects completed",
 	},
 	{
-		num: 8,
+		num: 25,
 		text: "Technologies mastered",
 	},
 	{
@@ -28,6 +28,7 @@ const Stats = () => {
 						return (
 							<div
 								className="flex-1 flex gap-4 items-center justify-center xl:justify-start"
+								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 								key={index}
 							>
 								<ContUp

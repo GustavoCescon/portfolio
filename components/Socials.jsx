@@ -2,8 +2,8 @@ import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const socials = [
-	{ icon: <FaGithub />, path: "" },
-	{ icon: <FaLinkedin />, path: "" },
+	{ icon: <FaGithub />, path: "https://github.com/GustavoCescon" },
+	{ icon: <FaLinkedin />, path: "https://www.linkedin.com/in/gustavo-cescon/" },
 ];
 const Socials = ({ containerStyles, iconStyles }) => {
 	return (
@@ -11,7 +11,7 @@ const Socials = ({ containerStyles, iconStyles }) => {
 			{socials.map((item, index) => {
 				return (
 					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-<Link key={index} href={item.path} className={iconStyles}>
+					<Link key={index} href={item.path} className={iconStyles}>
 						{item.icon}
 					</Link>
 				);

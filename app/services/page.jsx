@@ -1,36 +1,36 @@
 "use client";
 
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { BsArrowDownRight } from "react-icons/bs";
 
 const services = [
 	{
 		num: "01",
-		title: "Web Development",
+		title: "Desenvolvimento Web",
 		description:
-			"Lorem ipsum dolor sit amet. Ut voluptatem enim ut voluptatem facilis qui aperiam autem in dolorem obcaecati vel illum provident ut possimus tempora ea debitis esse. Eos laboriosam voluptas",
+			"Ofereço soluções completas em desenvolvimento web, desde o design até a manutenção. Crio experiências digitais responsivas e intuitivas, utilizando tecnologias modernas e melhores práticas.",
 		href: "",
 	},
 	{
 		num: "02",
-		title: "Web Development",
+		title: "Otimização e SEO",
 		description:
-			"Lorem ipsum dolor sit amet. Ut voluptatem enim ut voluptatem facilis qui aperiam autem in dolorem obcaecati vel illum provident ut possimus tempora ea debitis esse. Eos laboriosam voluptas",
+			"Crio sites e aplicações com design responsivo e SEO. Garanto que seu projeto seja visualmente atraente e tecnicamente sólido, melhorando a experiência do usuário e o desempenho nos motores de busca.",
 		href: "",
 	},
 	{
 		num: "03",
-		title: "Web Development",
+		title: "Consultoria em TI",
 		description:
-			"Lorem ipsum dolor sit amet. Ut voluptatem enim ut voluptatem facilis qui aperiam autem in dolorem obcaecati vel illum provident ut possimus tempora ea debitis esse. Eos laboriosam voluptas",
+			"Ofereço consultoria para melhorar a eficiência e segurança de suas operações de TI. Identifico melhorias e implemento soluções tecnológicas eficazes para otimizar o desempenho e segurança do seu negócio.",
 		href: "",
 	},
 	{
 		num: "04",
-		title: "Web Development",
+		title: "Integração de Sistemas",
 		description:
-			"Lorem ipsum dolor sit amet. Ut voluptatem enim ut voluptatem facilis qui aperiam autem in dolorem obcaecati vel illum provident ut possimus tempora ea debitis esse. Eos laboriosam voluptas",
+			"Ofereço serviços de integração de sistemas para conectar suas aplicações e processos. Asseguro que todas as ferramentas e plataformas funcionem de maneira coesa e eficiente, melhorando a operação do seu negócio.",
 		href: "",
 	},
 ];

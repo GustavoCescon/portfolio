@@ -17,7 +17,7 @@ const buttonVariants = cva(
 			size: {
 				default: "h-[44px] px-6",
 				md: "h-[48px] px-6",
-				lg: "h-[56px] px-8 text-s, uppercase tracking-[2px]",
+				lg: "h-[56px] px-8 text-s uppercase tracking-[2px]",
 			},
 		},
 		defaultVariants: {
@@ -28,12 +28,17 @@ const buttonVariants = cva(
 );
 
 const Button = React.forwardRef(
-	({ className, variant, size, asChild = false, ...props }, ref) => {
-		const Comp = asChild ? Slot : "button";
+	(
+		{ className, variant, size, asChild = false, href, download, ...props },
+		ref,
+	) => {
+		const Comp = asChild ? Slot : href ? "a" : "button";
 		return (
 			<Comp
 				className={cn(buttonVariants({ variant, size, className }))}
 				ref={ref}
+				href={href}
+				download={download}
 				{...props}
 			/>
 		);

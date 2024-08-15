@@ -24,23 +24,21 @@ import Link from "next/link";
 const projects = [
 	{
 		num: "01",
-		category: "frontend",
+		category: "Fullstack",
 		title: "project 1",
-		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis aspernatur sequi, consequuntur numquam totam odio debitis ducimus voluptates eius provident quae optio maxime laborum ad quaerat, asperiores ipsum modi iusto.",
-		stack: [{ name: "React" }, { name: "Next.js" }],
-		image: "/assets/work/thumb1.png",
+		description: "Site para cursos aos munícipes de Cachoeiro de Itapemirim",
+		stack: [{ name: "React" }, { name: "Vite" }, { name: "Bulma" }],
+		image: "/assets/work/thumb4.png",
 		live: "",
 		github: "",
 	},
 	{
 		num: "02",
-		category: "frontend",
+		category: "Fullstack",
 		title: "project 1",
-		description:
-			"Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis aspernatur sequi, consequuntur numquam totam odio debitis ducimus voluptates eius provident quae optio maxime laborum ad quaerat, asperiores ipsum modi iusto.",
-		stack: [{ name: "React" }, { name: "Next.js" }],
-		image: "/assets/work/thumb1.png",
+		description: "Site para adoção de animais.",
+		stack: [{ name: "PHP" }, { name: "Bulma" }, { name: "Jquery" }],
+		image: "/assets/work/thumb5.png",
 		live: "",
 		github: "",
 	},

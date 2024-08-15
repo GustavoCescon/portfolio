@@ -123,11 +123,10 @@ const Work = () => {
 							onSlideChange={handleSlideChange}
 						>
 							{projects.map((project, index) => {
-								// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 								return (
 									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-									<SwiperSlide key={index} className="w-full">
-										<div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+									<SwiperSlide key={index} className="w-full ">
+										<div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20 cursor-pointer">
 											<div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10" />
 											<div className="relative w-full h-full">
 												<Image

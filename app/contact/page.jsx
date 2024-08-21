@@ -1,5 +1,6 @@
 "use client";
 
+import { TemplateEmail } from "@/components/templateEmail";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -13,8 +14,9 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
-import { FaEnvelope, FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
 
+import { useRef, useState } from "react";
+import { FaEnvelope, FaMapMarkedAlt, FaPhoneAlt } from "react-icons/fa";
 const info = [
 	{
 		icon: <FaPhoneAlt />,
@@ -34,6 +36,41 @@ const info = [
 ];
 
 const Contact = () => {
+	const inputName = useRef();
+	const inputSobrenome = useRef();
+	const inputEmail = useRef();
+	const inputTelefone = useRef();
+	const [selectService, setSelectService] = useState();
+	const inputTextarea = useRef();
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		const formData = {
+			name: `${inputName.current.value} ${inputSobrenome.current.value}`,
+			email: inputEmail.current.value,
+			subject: selectService,
+			content: inputTextarea.current.value,
+			phone: inputTelefone.current.value,
+		};
+		try {
+			const response = await fetch("/api/sendEmail", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(formData),
+			});
+
+			if (response.ok) {
+				console.log("deu certo");
+			} else {
+				console.log("deu zika");
+			}
+		} catch (error) {
+			console.error(error);
+		}
+	};
+
 	return (
 		<motion.section
 			initial={{ opacity: 0 }}
@@ -55,26 +92,40 @@ const Contact = () => {
 								contato hoje mesmo!
 							</p>
 							{/*input*/}
-							<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-								<Input type="firstname" placeholder="Nome" />
-								<Input type="lastName" placeholder="Sobrenome" />
-								<Input type="email" placeholder="email" />
-								<Input type="phone" placeholder="telefone" />
+							<div className="grid grid-cols-1 gap-6 md:grid-cols-2 ">
+								<Input type="text" placeholder="Nome" ref={inputName} />
+								<Input
+									type="text"
+									placeholder="Sobrenome"
+									ref={inputSobrenome}
+								/>
+								<Input type="email" placeholder="email" ref={inputEmail} />
+								<Input type="text" placeholder="telefone" ref={inputTelefone} />
 							</div>
 							{/* select */}
 
-							<Select>
+							<Select onValueChange={(e) => setSelectService(e)}>
 								<SelectTrigger className="w-full">
 									<SelectValue placeholder="Selecione um serviço" />
 								</SelectTrigger>
 								<SelectContent>
 									<SelectGroup>
 										<SelectLabel>Selecione um serviço</SelectLabel>
-										<SelectItem value="fs">Fullstack developer</SelectItem>
-										<SelectItem value="fe">Front-end developer</SelectItem>
-										<SelectItem value="be">Back-end developer</SelectItem>
-										<SelectItem value="be">Consultoria em TI</SelectItem>
-										<SelectItem value="be">Integração de sistemas</SelectItem>
+										<SelectItem value="Fullstack developer">
+											Fullstack developer
+										</SelectItem>
+										<SelectItem value="Front-end developer">
+											Front-end developer
+										</SelectItem>
+										<SelectItem value="Back-end developer">
+											Back-end developer
+										</SelectItem>
+										<SelectItem value="Consultoria em TI">
+											Consultoria em TI
+										</SelectItem>
+										<SelectItem value="Integração de sistemas">
+											Integração de sistemas
+										</SelectItem>
 									</SelectGroup>
 								</SelectContent>
 							</Select>
@@ -83,16 +134,21 @@ const Contact = () => {
 							<Textarea
 								className="h-[200px]"
 								placeholder="Escreva sua mensagem aqui."
+								ref={inputTextarea}
 							/>
 
 							{/* button */}
-							<Button size="md" className="max-w-40">
+							<Button
+								size="md"
+								className="max-w-40"
+								onClick={(e) => handleSubmit(e)}
+							>
 								Send message
 							</Button>
 						</form>
 					</div>
 					{/*info*/}
-					<div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
+					<div className="flex items-center flex-1 order-1 mb-8 xl:justify-end xl:order-none xl:mb-0">
 						<ul className="flex flex-col gap-10">
 							{info.map((item, index) => {
 								return (

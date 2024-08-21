@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c22;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            color: #000000;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #00ff99;
+        }
+        p {
+            margin: 0 0 10px;
+        }
+        .footer {
+            margin-top: 20px;
+            padding-top: 10px;
+            border-top: 1px solid #00e187;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Você tem um novo contato do portfolio</h1>
+        <p><strong>Name:</strong> {{name}}</p>
+        <p><strong>Email:</strong> {{email}}</p>
+        <p><strong>Telefone:</strong> {{phone}}</p>
+        <p><strong>Serviço:</strong> {{service}}</p>
+        <p><strong>Mensagem:</strong></p>
+        <p>{{message}}</p>
+        <div class="footer">
+            <p>Entre em contato.</p>
+        </div>
+    </div>
+</body>
+</html>

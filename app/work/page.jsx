@@ -24,22 +24,106 @@ import Link from "next/link";
 const projects = [
 	{
 		num: "01",
-		category: "Fullstack",
+		category: "FrontEnd",
 		title: "project 1",
-		description: "Site para cursos aos munícipes de Cachoeiro de Itapemirim",
-		stack: [{ name: "React" }, { name: "Vite" }, { name: "Bulma" }],
-		image: "/assets/work/thumb4.png",
+		description:
+			"Novo site da prefeitura Municipal de Cachoeiro de Itapemirim em desenvolvimento.",
+		stack: [{ name: "React" }, { name: "NextJs" }],
+		image: "/assets/work/thumb10.png",
 		live: "",
 		github: "",
 	},
 	{
 		num: "02",
 		category: "Fullstack",
-		title: "project 1",
+		title: "project 2",
+		description: "Sistema completo de ouvidoria.",
+		stack: [
+			{ name: "React" },
+			{ name: "Bulma" },
+			{ name: "Express" },
+			{ name: "Api" },
+		],
+		image: "/assets/work/thumb8.png",
+		live: "https://sigo.cachoeiro.es.gov.br/login",
+		github: "",
+	},
+	{
+		num: "03",
+		category: "Fullstack",
+		title: "project 3",
+		description: "Site para monitorar os atendimentos dos contadores.",
+		stack: [
+			{ name: "React" },
+			{ name: "NextJs" },
+			{ name: "NestJs" },
+			{ name: "TailwindCss" },
+		],
+		image: "/assets/work/thumb9.png",
+		live: "https://sites.cachoeiro.es.gov.br/conexao-empresarial",
+		github: "",
+	},
+	{
+		num: "04",
+		category: "Fullstack",
+		title: "project 4",
 		description: "Site para adoção de animais.",
 		stack: [{ name: "PHP" }, { name: "Bulma" }, { name: "Jquery" }],
 		image: "/assets/work/thumb5.png",
-		live: "",
+		live: "https://apps.cachoeiro.es.gov.br/adocao-de-animais/",
+		github: "",
+	},
+	{
+		num: "05",
+		category: "Fullstack",
+		title: "project 5",
+		description:
+			"Site para capacitação dos munícipes de Cachoeiro de Ipemirim.",
+		stack: [
+			{ name: "Vue" },
+			{ name: "Bulma" },
+			{ name: "Express" },
+			{ name: "Api" },
+		],
+		image: "/assets/work/thumb4.png",
+		live: "https://sites.cachoeiro.es.gov.br/capacita/",
+		github: "",
+	},
+	{
+		num: "06",
+		category: "Fullstack",
+		title: "project 6",
+		description: "Site carta de serviços em desenvolvimento.",
+		stack: [
+			{ name: "Vue" },
+			{ name: "Bulma" },
+			{ name: "Express" },
+			{ name: "Api" },
+		],
+		image: "/assets/work/thumb7.png",
+		live: "https://sites.cachoeiro.es.gov.br/carta-servico-ipaci/",
+		github: "",
+	},
+	{
+		num: "07",
+		category: "Fullstack",
+		title: "project 7",
+		description:
+			"Site de transparência da autarquia IPACI, da Prefeitura de Cachoeiro de Itapemirim.",
+		stack: [{ name: "PHP" }, { name: "Bootstrap" }, { name: "Jquery" }],
+		image: "/assets/work/thumb6.png",
+		live: "https://transparencia.ipaci.es.gov.br/",
+		github: "",
+	},
+	{
+		num: "08",
+		category: "Fullstack",
+		title: "project 8",
+		description:
+			"Site de transparência da autarquia AGERSA, da Prefeitura de Cachoeiro de Itapemirim.",
+		stack: [{ name: "PHP" }, { name: "Bootstrap" }, { name: "Jquery" }],
+		image: "/assets/work/thumb11.png",
+		live: "https://transparencia.agersa.es.gov.br/",
 		github: "",
 	},
 ];
@@ -65,11 +149,11 @@ const Work = () => {
 				<div className="flex flex-col xl:flex-row xl:gap-[30px]">
 					<div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
 						<div className="flex flex-col gap-[30px] h-[50%]">
-							<div className="text-8xl leading-none font-extrabold text-transparent text-outline">
+							<div className="font-extrabold leading-none text-transparent text-8xl text-outline">
 								{project.num}
 							</div>
 							<h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-								{project.category} project
+								Projeto {project.category}
 							</h2>
 							<p className="text-white/60">{project.description}</p>
 							<ul className="flex gap-4">
@@ -85,31 +169,35 @@ const Work = () => {
 							</ul>
 							<div className="border border-white/20" />
 							<div className="flex items-center gap-4">
-								<Link href={project.live}>
-									<TooltipProvider delayDuration={100}>
-										<Tooltip>
-											<TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-												<BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
-											</TooltipTrigger>
-											<TooltipContent>
-												<p>live project</p>
-											</TooltipContent>
-										</Tooltip>
-									</TooltipProvider>
-								</Link>
+								{project?.live && (
+									<Link href={project.live}>
+										<TooltipProvider delayDuration={100}>
+											<Tooltip>
+												<TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+													<BsArrowUpRight className="text-3xl text-white group-hover:text-accent" />
+												</TooltipTrigger>
+												<TooltipContent>
+													<p>live project</p>
+												</TooltipContent>
+											</Tooltip>
+										</TooltipProvider>
+									</Link>
+								)}
 
-								<Link href={project.github}>
-									<TooltipProvider delayDuration={100}>
-										<Tooltip>
-											<TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-												<BsGithub className="text-white text-3xl group-hover:text-accent" />
-											</TooltipTrigger>
-											<TooltipContent>
-												<p>Github repository</p>
-											</TooltipContent>
-										</Tooltip>
-									</TooltipProvider>
-								</Link>
+								{project?.github && (
+									<Link href={project.github}>
+										<TooltipProvider delayDuration={100}>
+											<Tooltip>
+												<TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
+													<BsGithub className="text-3xl text-white group-hover:text-accent" />
+												</TooltipTrigger>
+												<TooltipContent>
+													<p>Github repository</p>
+												</TooltipContent>
+											</Tooltip>
+										</TooltipProvider>
+									</Link>
+								)}
 							</div>
 						</div>
 					</div>
@@ -125,12 +213,14 @@ const Work = () => {
 									// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 									<SwiperSlide key={index} className="w-full ">
 										<div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20 cursor-pointer">
-											<div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10" />
+											<div className="absolute top-0 bottom-0 z-10 w-full h-full bg-black/10" />
 											<div className="relative w-full h-full">
 												<Image
 													src={project.image}
-													fill
-													className="object-cover"
+													width={1024}
+													height={460}
+													loading="lazy"
+													className="object-contain w-full h-full"
 													alt="project image"
 												/>
 											</div>

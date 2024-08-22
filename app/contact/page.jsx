@@ -1,6 +1,5 @@
 "use client";
 
-import { TemplateEmail } from "@/components/templateEmail";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -62,9 +61,9 @@ const Contact = () => {
 			});
 
 			if (response.ok) {
-				console.log("deu certo");
+				console.log("it's ok");
 			} else {
-				console.log("deu zika");
+				console.log("it's not right");
 			}
 		} catch (error) {
 			console.error(error);

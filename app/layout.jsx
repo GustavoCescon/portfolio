@@ -13,7 +13,26 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata = {
 	title: "Cescon - Software Engineer",
 	description: "Portfolio do Gustavo Cescon - Software Engineer",
-	image: "/assets/thumb.png",
+	openGraph: {
+		title: "Cescon - Software Engineer",
+		description: "Portfolio do Gustavo Cescon - Software Engineer",
+		url: "https://cescon-portfolio.vercel.app/",
+		type: "website",
+		images: [
+			{
+				url: "/assets/thumb.png",
+				width: 1200,
+				height: 630,
+				alt: "Cescon - Software Engineer",
+			},
+		],
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Cescon - Software Engineer",
+		description: "Portfolio do Gustavo Cescon - Software Engineer",
+		images: ["/assets/thumb.png"],
+	},
 };
 
 export default function RootLayout({ children }) {

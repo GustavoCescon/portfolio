@@ -27,11 +27,8 @@ export async function POST(request) {
 		/>,
 	);
 
-	const sentFrom = new Sender(
-		"MS_H8KmCr@trial-jy7zpl9vw15g5vx6.mlsender.net",
-		"Portfolio",
-	);
-	const recipients = [new Recipient("gustavocescon@gmail.com", "Portfolio")];
+	const sentFrom = new Sender(process.env.RECEIVER_EMAIL, "Portfolio");
+	const recipients = [new Recipient(process.env.EMAIL, "Portfolio")];
 
 	try {
 		const emailParams = new EmailParams()

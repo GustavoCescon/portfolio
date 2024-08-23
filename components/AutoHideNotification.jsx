@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 
 const AutoHideNotification = ({ message, duration, onClose, text }) => {
-	console.log(text);
 	const [visible, setVisible] = useState(true);
 
 	useEffect(() => {
